@@ -1,0 +1,18 @@
+version: '2.1'
+services:
+  model-monitor:
+    #build:
+    #  context: .
+    #  dockerfile: Dockerfile
+    image: harbor.parmalogica.ru/dit-og-19/dm-monitor:latest
+    ports:
+      - 5445:5445
+    restart: always
+    networks:
+      - monitoring-network
+      #- airflow-network
+
+networks:
+  monitoring-network:
+    external: true
+  #  external: true
